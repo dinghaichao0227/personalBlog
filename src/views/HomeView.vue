@@ -3,7 +3,6 @@
     <div class="header">
       <div class="header-box">
         <div class="header-box-top">
-          <!-- <img :src="image" alt="#" /> -->
           <h1>blog</h1>
         </div>
         <a-menu class="header-box-menu" :default-selected-keys="[$route.path]" mode="horizontal">
