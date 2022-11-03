@@ -5,7 +5,7 @@ const routes = [
     path: "/",
     name: "home",
     component: HomeView,
-    redirect: "githomePage",
+    redirect: "homePage",
     children: [
       {
         path: "homePage",
