@@ -1,44 +1,43 @@
 <template>
   <div class="boxs">
-    <div class="header">
+    <div class="header row justify-content-md-center">
       <div class="header-box">
-        <div class="header-box-top">
-          <h1>blog</h1>
+        <div class="header-box-top col-sm-7">
+          <div class="logo">blog</div>
         </div>
-        <a-menu class="header-box-menu" :default-selected-keys="[$route.path]" mode="horizontal">
-          <a-menu-item key="/homePage" @click="changeMenu('homePage')">
-            <a-icon type="home" />主页</a-menu-item
-          >
-          <a-menu-item key="/skill" @click="changeMenu('skill')">
-            <a-icon type="copy" />笔记</a-menu-item
-          >
-          <a-menu-item key="/notes" @click="changeMenu('notes')">
-            <a-icon type="global" />技能</a-menu-item
-          >
-          <a-menu-item key="/phone" @click="changeMenu('phone')"
-            ><a-icon type="phone" />联系</a-menu-item
-          >
-          <a-menu-item key="/aboutUser" @click="changeMenu('aboutUser')">
-            <a-icon type="user" />关于我</a-menu-item
-          >
-        </a-menu>
+        <div class="col-sm-6">
+          <a-menu class="header-box-menu" :default-selected-keys="[$route.path]" mode="horizontal">
+            <a-menu-item class="home" key="/homePage" @click="changeMenu('homePage')">
+              <a-icon type="home" />主页</a-menu-item
+            >
+            <a-menu-item class="home" key="/skill" @click="changeMenu('skill')">
+              <a-icon type="copy" />笔记</a-menu-item
+            >
+            <a-menu-item class="home" key="/notes" @click="changeMenu('notes')">
+              <a-icon type="global" />技能</a-menu-item
+            >
+            <a-menu-item class="home" key="/phone" @click="changeMenu('phone')"
+              ><a-icon type="phone" />联系</a-menu-item
+            >
+            <a-menu-item class="home" key="/aboutUser" @click="changeMenu('aboutUser')">
+              <a-icon type="user" />关于我</a-menu-item
+            >
+          </a-menu>
+        </div>
       </div>
     </div>
     <div class="layout">
-      <div class="layout-box">
-        <router-view></router-view>
-        <p class="footer">已经到底了。。。</p>
-      </div>
+      <router-view></router-view>
+      <p class="layout-footer">已经到底了。。。</p>
     </div>
   </div>
 </template>
 
 <script>
-import logo from "../assets/logo.png";
 export default {
   data() {
     return {
-      image: logo,
+      // image: logo,
     };
   },
   methods: {
@@ -53,46 +52,51 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.boxs {
+  // width: 100vw;
+}
 .header {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 99.5vw;
-  height: 50px;
+  width: 101%;
+  height: 40px;
   position: fixed;
+  justify-content: center;
   z-index: 200;
   opacity: 0.7;
   background-color: #f1f1f1;
   &-box {
     z-index: 200;
-    position: fixed;
-    // top: 0.05%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-content: center;
     width: 1200px;
-    height: 50px;
+    height: 40px;
     opacity: 0.8;
     color: #000;
     background-color: #f1f1f1;
-
-    img {
-      width: 40px;
-      height: 40px;
+    .logo {
       display: inline-block;
-
-      .logo {
-        display: inline-block;
-        width: 40px;
-        height: 40px;
-        color: #000;
-      }
+      // width: 40px;
+      height: 40px;
+      line-height: 30px;
+      font-size: 20px;
+      color: #000;
     }
     &-menu {
       border-bottom: none;
       display: flex;
+      justify-content: center;
+      align-items: center;
       background: none;
       color: #000;
+
+      .home {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+        line-height: 40px;
+      }
     }
   }
 }
@@ -100,20 +104,16 @@ export default {
 .layout {
   z-index: 199;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-content: center;
+  // width: 1200px;
   // background-image: url("../assets/3.jpg");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  &-box {
-    width: 1200px;
-    margin-top: 70px;
-    // margin-bottom: 100px;
-    // background-color: gray;
-    .footer {
-      text-align: center;
-      margin-top: 50px;
-    }
+  // background-repeat: no-repeat;
+  // background-size: 100% 100%;
+  &-footer {
+    text-align: center;
+    margin-top: 50px;
   }
 }
 </style>

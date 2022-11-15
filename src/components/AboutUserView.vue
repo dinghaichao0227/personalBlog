@@ -1,33 +1,45 @@
 <template>
-  <div>
-    <a-card hoverable>
-      <img class="image" slot="cover" alt="example" :src="img" />
-    </a-card>
-    <img class="logo" :src="logo" alt="本人" />
-    <div class="about">关于我</div>
-    <a-card hoverable>
-      <p class="userIntroduce">
-        2000年出生，喜欢运动喜欢大汗淋漓的感觉生活中我的话很多也很喜欢笑，笑可以消除一切的顾虑。今年是我正式踏入社会的第一年也是从学生转变成职场人裸辞之后的我一直在学习我希望我的努力有一个圆满的回报。
-      </p>
-    </a-card>
-    <div class="about-Life">生活的我</div>
-    <div class="main">
-      <a-card hoverable style="width: 290px">
-        <img class="study" :src="study" slot="cover" alt="example" />
-        <p>学习中的我</p>
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <!-- <div class="col-md-12">
+        <img class="image img-fluid" :src="img" />
+      </div> -->
+      <div class="col-sm-10">
+        <img class="logo rounded float-start" :src="logo" alt="本人" />
+      </div>
+      <div class="about col-sm-11">关于我</div>
+      <a-card hoverable style="width: 1200px">
+        <p class="userIntroduce">
+          2000年出生，喜欢运动喜欢大汗淋漓的感觉生活中我的话很多也很喜欢笑，笑可以消除一切的顾虑。今年是我正式踏入社会的第一年也是从学生转变成职场人裸辞之后的我一直在学习我希望我的努力有一个圆满的回报。
+        </p>
       </a-card>
-      <a-card hoverable style="width: 290px">
-        <img class="strive" :src="strive" slot="cover" alt="example" />
-        <p>努力中的我</p>
-      </a-card>
-      <a-card hoverable style="width: 290px">
-        <img class="plays" :src="plays" slot="cover" alt="example" />
-        <p>运动中的我</p>
-      </a-card>
-      <a-card hoverable style="width: 290px">
-        <img class="wuzi1" :src="wuzi1" slot="cover" alt="example" />
-        <p>未来美好憧憬的我</p>
-      </a-card>
+      <div class="about col-sm-11">生活的我</div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-sm-6 col-xl-3 mt-3">
+        <a-card hoverable style="width: 250px">
+          <img class="study img-fluid" :src="study" slot="cover" alt="example" />
+          <p>学习中的我</p>
+        </a-card>
+      </div>
+      <div class="col-sm-6 col-lg-3 mt-3">
+        <a-card hoverable style="width: 250px">
+          <img class="strive img-fluid" :src="strive" slot="cover" alt="example" />
+          <p>努力中的我</p>
+        </a-card>
+      </div>
+      <div class="col-sm-6 col-lg-3 mt-3">
+        <a-card hoverable style="width: 150px">
+          <img class="plays img-fluid" :src="plays" slot="cover" alt="example" />
+          <p>运动中的我</p>
+        </a-card>
+      </div>
+      <div class="col-sm-6 col-lg-3 mt-3">
+        <a-card hoverable style="width: 150px">
+          <img class="wuzi1 img-fluid" :src="wuzi1" slot="cover" alt="example" />
+          <p>未来美好憧憬的我</p>
+        </a-card>
+      </div>
     </div>
   </div>
 </template>
@@ -54,40 +66,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.image {
-  width: 1200px;
-  height: 500px;
-  border-radius: 10px;
+.container {
+  margin-top: 50px;
 }
 .logo {
   width: 100px;
   height: 100px;
-  margin-left: 100px;
-  position: relative;
-  top: -50px;
 }
-.about,
-.about-Life {
-  font-size: 24px;
+.about {
+  font-size: 20px;
   font-weight: 600;
-  margin-bottom: 20px;
+  color: #000;
+  margin: 20px;
 }
-.about-Life {
-  margin-top: 20px;
-}
-.main {
-  margin-top: 20px;
+.col-sm-6,
+.col-lg-3 {
+  width: 300px;
   display: flex;
-  justify-content: space-between;
-}
-.study,
-.strive,
-.plays,
-.wuzi1 {
-  width: 100%;
-  height: 330px;
-}
-.userIntroduce {
-  text-indent: 2rem;
+  justify-content: center;
 }
 </style>

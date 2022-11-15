@@ -1,31 +1,39 @@
 <template>
-  <div>
-    <a-carousel autoplay>
-      <div v-for="(item, index) in imgList" :key="index">
-        <div>
-          <h3>
-            <img class="imgStyle" :src="item.image" alt="#" />
-          </h3>
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <a-carousel autoplay style="width: 1200px">
+        <div v-for="(item, index) in imgList" :key="index">
+          <div>
+            <h3>
+              <img class="imgStyle" :src="item.image" alt="#" />
+            </h3>
+          </div>
         </div>
+      </a-carousel>
+    </div>
+    <div class="row justify-content-sm-center mt-3">
+      <div class="col-sm-6 col-lg-4">
+        <a-card hoverable style="width: 350px">
+          <img class="past" :src="past" slot="cover" alt="example" />
+          <p>缅怀过去</p>
+        </a-card>
       </div>
-    </a-carousel>
-    <div class="esthesia">
-      <a-card hoverable style="width: 370px">
-        <img class="past" :src="past" slot="cover" alt="example" />
-        <p>缅怀过去</p>
-      </a-card>
-      <a-card hoverable style="width: 370px; height: 300px">
-        <img :src="now" slot="cover" alt="example" />
-        <p>珍惜现在</p>
-      </a-card>
-      <a-card hoverable style="width: 370px">
-        <img :src="future" slot="cover" alt="example" />
-        <p>面对未来</p>
-      </a-card>
+      <div class="col-sm-6 col-lg-4">
+        <a-card hoverable>
+          <img class="past" :src="now" slot="cover" alt="example" />
+          <p>珍惜现在</p>
+        </a-card>
+      </div>
+      <div class="col-sm-6 col-lg-4">
+        <a-card hoverable style="width: 350px">
+          <img class="past" :src="future" slot="cover" alt="example" />
+          <p>面对未来</p>
+        </a-card>
+      </div>
     </div>
     <div class="skill">
       <p class="text">技术小点</p>
-      <div class="skillContent">
+      <div class="row justify-content-sm-center mt-3">
         <div class="skill1">
           <div class="top">
             <p class="content">
@@ -78,20 +86,22 @@
         </div>
       </div>
     </div>
-    <p class="title">文章</p>
-    <a-list item-layout="horizontal" :data-source="dataList">
-      <a-list-item slot="renderItem" slot-scope="item">
-        <a-list-item-meta
-          description="Ant Design, a design language for background applications, is refined by Ant UED Team"
-        >
-          <a slot="title" href="https://juejin.cn/user/783278781765934">{{ item.title }}</a>
-          <a-avatar
-            slot="avatar"
-            src="https://picx1.zhimg.com/80/v2-fc5350cb9e69cf1736845752fcd74ef4_720w.webp?source=1940ef5c"
-          />
-        </a-list-item-meta>
-      </a-list-item>
-    </a-list>
+    <div class="row justify-content-center col-md-12">
+      <p class="title">文章</p>
+      <a-list item-layout="horizontal" :data-source="dataList" style="width: 1200px">
+        <a-list-item slot="renderItem" slot-scope="item">
+          <a-list-item-meta
+            description="Ant Design, a design language for background applications, is refined by Ant UED Team"
+          >
+            <a slot="title" href="https://juejin.cn/user/783278781765934">{{ item.title }}</a>
+            <a-avatar
+              slot="avatar"
+              src="https://picx1.zhimg.com/80/v2-fc5350cb9e69cf1736845752fcd74ef4_720w.webp?source=1940ef5c"
+            />
+          </a-list-item-meta>
+        </a-list-item>
+      </a-list>
+    </div>
   </div>
 </template>
 
@@ -162,40 +172,41 @@ export default {
 </script>
 
 <style scoped>
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
 .ant-carousel >>> .slick-slide {
   text-align: center;
-  height: 500px;
   background: #364d79;
   overflow: hidden;
   border-radius: 10px;
+  margin-top: 50px;
+  height: 400px;
 }
-
 .ant-carousel >>> .slick-slide h3 {
   color: #fff;
   border-radius: 10px;
 }
 .imgStyle {
   width: 100%;
-  height: 500px;
+  height: 400px;
 }
 .past {
   width: 100%;
-  height: 550px;
+  height: 400px;
 }
-.esthesia {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
-}
+
 .skill {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-content: center;
 }
 .skillContent {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 .text {
   text-align: center;
@@ -211,7 +222,11 @@ export default {
   height: 300px;
   background-color: #f9f9f9;
   padding: 10px;
+  margin: 19px;
 }
+/* .skill2 {
+  margin: 0px 40px;
+} */
 .top {
   width: 350px;
   height: 200px;
@@ -244,5 +259,13 @@ export default {
 .left-mooc {
   width: 20px;
   height: 20px;
+}
+
+.col-sm-6,
+.col-log-4 {
+  width: 420px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
 }
 </style>

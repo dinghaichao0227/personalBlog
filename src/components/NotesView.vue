@@ -1,14 +1,22 @@
 <template>
-  <div class="box">
-    <p class="title">技术</p>
-    <div class="box-notes" v-for="(item, index) in itemList" :key="index">
-      <div class="box-notes-img">
-        <img class="image" :src="item.image" alt="#" />
+  <div class="box container">
+    <div class="row justify-content-md-center">
+      <div class="col-sm-11">
+        <h1>技术</h1>
       </div>
-      <div class="box-notes-title">
-        <h2>{{ item.table }}</h2>
-        <a-divider dashed />
-        <p class="titleText">{{ item.title }}</p>
+      <div
+        class="box-notes row justify-content-md-center col-sm-11"
+        v-for="(item, index) in itemList"
+        :key="index"
+      >
+        <div class="box-notes-img col-md-6 col-sm-6">
+          <img class="image" :src="item.image" alt="#" />
+        </div>
+        <div class="box-notes-title col-md-6 col-sm-6">
+          <h2>{{ item.table }}</h2>
+          <a-divider dashed />
+          <p class="titleText">{{ item.title }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -40,20 +48,31 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.container {
+  margin-top: 20px;
+}
+
+.col-sm-11 {
+  margin-top: 30px;
+}
 .box {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   .title {
-    font-size: 24px;
+    font-size: 8px;
     color: #000;
     font-weight: 600;
     width: 100%;
     height: 100px;
     line-height: 100px;
   }
+
   &-notes {
     display: flex;
     justify-content: space-between;
+
     &-img {
       .image {
         width: 300px;
@@ -62,13 +81,12 @@ export default {
         margin-bottom: 20px;
       }
     }
+
     &-title {
       .titleText {
-        width: 700px;
-        height: 300px;
         word-wrap: break-word;
         text-indent: 2rem;
-        padding-top: 20px;
+        padding-top: 10px;
         font-size: 17px;
         color: #000;
       }
