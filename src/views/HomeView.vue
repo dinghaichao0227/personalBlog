@@ -38,6 +38,7 @@ export default {
   data() {
     return {
       // image: logo,
+      url: "http://www.xxx.com?a=1&b=2&c=3",
     };
   },
   methods: {
@@ -47,6 +48,41 @@ export default {
         this.$router.push(route);
       }
     },
+
+    //假设有个方法
+    getUrl() {
+      var arr = [1, 2, 3, 4, 5, 6];
+      console.log(arr.splice(3));
+
+      // for (var i = 0; i < arr.length; i++) {
+      //   for (var j = i + 1; j < arr.length; j++) {
+      //     if (arr[i] == arr[j]) {
+      //       arr.splice(j);
+      //     }
+      //   }
+      // }
+      // console.log(arr);
+
+      //     var q = [];
+      //     this.url.split("?")[1];
+      //     q = this.url.split("?")[1];
+      //     console.log(q);
+      //     let value = [];
+      //     value = q.split("&");
+      //     console.log(value);
+      //     let obj = {};
+      //     for (var i = 0; i < value.length; i++) {
+      //       var item = value[i].split("=");
+      //       console.log(item);
+      //       obj[value[i]];
+      //       obj[item[0]] = item[1];
+      //     }
+      //     console.log(obj, 99);
+      //     return obj;
+    },
+  },
+  mounted() {
+    this.getUrl();
   },
 };
 </script>
