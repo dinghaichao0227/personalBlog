@@ -1,0 +1,43 @@
+// @media screen and (max-width: 768px) {
+//   .navbar {
+//     width: 100%;
+//   }
+// }
+
+// @media screen and (min-width: 768px) {
+//   .navbar {
+//     width: 750px;
+//   }
+// }
+// @media screen and (min-width: 992px) {
+//   .navbar {
+//     width: 970px;
+//   }
+// }
+
+// @media screen and (min-width: 1200px) {
+//   .navbar {
+//     width: 1170px;
+//   }
+// }
+
+// .container {
+//   display: flex;
+//   flex-direction: column;
+//   margin: auto;
+// }
+.carousel-inner {
+  height: 30rem;
+}
+.list-group-item {
+  display: flex;
+}
+.column {
+  display: inline-block;
+  display: flex;
+  flex-direction: column;
+}
+a{
+  text-decoration: none;
+}
+

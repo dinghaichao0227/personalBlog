@@ -13,15 +13,20 @@ export default {
   data() {
     return {
       itemList: ["dhc"],
+      arr: ["44", "11", "22", "33", "22", "55", "22"],
     };
   },
+  mounted() {},
   methods: {
     onSubmit() {
-      var text = document.getElementById("input").value;
-      this.itemList.push(text);
-      document.getElementById("input").value = null;
-      console.log(text, 33);
-      console.log(1);
+      const prom = new Promise((resolve, reject) => {
+        resolve("hello");
+        reject("hello");
+        console.log(2);
+      }).then((error) => {
+        console.log(error);
+      });
+      console.log(prom, 222);
     },
   },
   destroyed() {
