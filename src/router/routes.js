@@ -2,6 +2,11 @@ import HomeView from "../views/HomeView.vue";
 
 const routes = [
   {
+    path: "/about",
+    name: "About",
+    component: () => import("../views/AboutView.vue"),
+  },
+  {
     path: "/",
     name: "home",
     component: HomeView,
@@ -10,7 +15,7 @@ const routes = [
       {
         path: "homePage",
         name: "HomePage",
-        component: () => import("../components/HomePageView.vue"),
+        component: () => import("../components/homePage/HomePageView.vue"),
       },
       {
         path: "skill",

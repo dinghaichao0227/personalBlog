@@ -3,11 +3,11 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import "normalize.css";
-import Antd from "ant-design-vue";
-import "ant-design-vue/dist/antd.css";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.bundle.js";
+import "@/style/home.scss";
 
 Vue.config.productionTip = false;
-Vue.use(Antd);
 
 new Vue({
   router,
