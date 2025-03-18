@@ -4,7 +4,9 @@
       <div class="container header-tabbar">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <div class="container" style="height: 1.5rem; line-height: 1rem">
-            <a class="navbar-brand" href="#">logo</a>
+            <a class="navbar-brand" href="#">
+              <img class="navbar-brand-img" :src="logo" alt="" />
+            </a>
             <button
               class="navbar-toggler"
               type="button"
@@ -69,10 +71,11 @@
 </template>
 
 <script>
+import { logo } from "@/config/logo";
 export default {
   data() {
     return {
-      // image: logo,
+      logo,
     };
   },
   methods: {
@@ -124,5 +127,9 @@ export default {
 }
 div ul li a:hover {
   background-color: rgb(235, 235, 235);
+}
+.navbar-brand-img {
+  width: 30px;
+  height: 30px;
 }
 </style>
